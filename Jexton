@@ -1,0 +1,305 @@
+#make bot do suff idk teacher told me
+from random import randint
+from time import sleep
+import os
+
+
+
+from random import randint as dice
+
+def lg():
+  lowest_number = 1
+  highest_number = 100
+  for i in range(4):
+    number_of_guesses = 5
+
+
+    print("Hello and welcome to my number guessing game")
+    print("You will get "+str(number_of_guesses)+" guesses to pick a number")
+    print("The number will be between "+str(lowest_number)+" and "+str(highest_number))
+
+    secret_number = dice(lowest_number,highest_number)
+    print(secret_number)
+
+
+    guesses_left = number_of_guesses
+
+    while(guesses_left > 0):
+      guess = input("Please guess a number:")
+      guess = int(guess)
+      if(guess > secret_number):
+        print("Your guess is bigger than the number I'm thinking of.")
+        guesses_left = guesses_left - 1
+        print("You have "+str(guesses_left)+" guesses left")
+
+      elif(guess < secret_number):
+        print("Your guess is smaller than the number I'm thinking of.")
+        guesses_left = guesses_left - 1
+        print("You have "+str(guesses_left)+" guesses left")
+
+      else:
+        print("That's it! I was thinking of "+str(secret_number)+"!")
+        print("you lost")
+        if i == 3:
+         
+         print('you did it!!!!!!')
+        sleep(4)
+
+        guesses_left = -1
+      
+      if(guesses_left == 0):
+        print("You're out of guesses. Game over!")
+    highest_number = highest_number * 10
+
+
+
+
+
+
+
+def m():
+  person = str(input("enter a name"))
+
+  print("yesterday " + person + " and I on are way to the.")
+
+  adjective = str(input("enter a adjctive"))
+  noun = str(input("enter a noun"))
+
+  print("park we saw a " + adjective + " " + noun +" and I on a bike.")
+
+  adjective = str(input("enter a adjective"))
+  noun = str(input("enter a noun"))
+
+  print("we also saw big " + adjective + " ballons tied to a " + noun + " .")
+  adjective = str(input("enter a adjective"))
+
+  adjective =str(input("enter a adjective"))
+  print("once we got to the " + adjective + " the park sky turned " + adjective + " .")
+
+  verb = str(input("enter a verb"))
+  verb = str(input("enter a verb"))
+  person = str(input("enter a person"))
+  verb = str(input("enter a verb"))
+
+  print("it started to " + verb + " and " + verb + " " + person + " and I " + verb + " all the way home.")
+
+  adjective = str(input("enter a adjective"))
+  verb = str(input("enter a verb"))
+
+  print('tomorrow we will go to the ' + adjective + " park again and hope it doesnt " + verb)
+
+
+
+
+
+def rpsm():
+  player = input('rock (r), paper (p) or scissors (s)?')
+
+  if player == 'r':
+    print('O', end=' ')
+    
+  elif player == 'p':
+    print('___', end=' ')
+    
+  elif player == 's':
+    print('>8', end=' ')
+    
+  elif player == ":p":
+    print("You win :O ")
+    quit()
+    
+  else:
+    print('??')
+    
+  print('vs', end=' ')
+
+  chosen = randint(1,4)
+
+  if chosen == 1 :
+    computer = 'r'
+    print('O')
+    
+  elif chosen == 2 :
+    computer = 'p'
+    print('___')
+    
+  elif chosen == 4 :
+    computer = 'm'
+    print('???')
+    
+  else:
+    computer = 's'
+    print('>8')
+    
+
+
+  if player == computer:
+    print('DRAW!')
+    
+  elif player == 'r' and computer == 's':
+    print('Player wins!')
+    
+  elif player == 'r' and computer == 'p':
+    print('Computer wins!')
+    
+  elif player == 'p' and computer == 'r':
+    print('Player wins!')
+    
+  elif player == 'p' and computer == 's':
+    print('Computer wins!')
+
+  elif player == 's' and computer == 'p':
+    print('Player wins!')
+    
+  elif player == "s" and computer == 'r':
+    print('Computer wins!')
+
+  else:
+    print('Huh?')
+
+
+
+
+
+def tictactoegame():
+  board = ["", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+  def makeboard(board):
+    print(board[1] + " | "+ board[2] + " | " + board[3])
+    print("----------")
+    print(board[4] + " | "+ board[5] + " | " + board[6])
+    print("----------")
+    print(board[7] + " | "+ board[8] + " | " + board[9])
+
+
+  def checkresult(board):
+    if board[1] == board[2] == board[3]:
+      if board[1] == "X":
+        print('you won u prob hacker doe')
+      else:
+          print('YOU LOSE AND I WIN HAHAHAHAAHAHA!!!!!!') 
+      return True
+    elif board[4] == board[5] == board[6]:
+      if board[4] == "X":
+        print('you won but i was going eazy on you')
+      else:
+          print('I won dont be mad gg')
+      return True
+    elif board[7] == board[8] == board[9]:
+      if board[7] == "X":
+        print('bro I was not ready thats not fair')
+      else:
+        print('bro why are you so salty i won fair play')
+        return True
+    elif board[3] == board[5] == board[7]:
+      if board[3] == "X":
+        print('DUDE IT WAS MY FPS BRUH')
+      else:
+        print('haha you so bad just get better')
+        return True
+    elif board[1] == board[5] == board[9]:
+      if board[1] == "X":
+        print('bruh -dev 2020')
+      else:
+        print('yes - com 2020')
+        return True
+    elif board[3] == board[6] == board[9]:
+      if board[3] == "X":
+        print('ok im mad insert angry fase')
+      else:
+        print('ok im running out im runing out of ideas')
+        return True
+    elif board[2] == board[5] == board[8]:
+      if board[2] == "X":
+        print('lol your so bad')
+      else:
+        print('l')
+        return True
+        
+        return True
+    elif board[1] == board[4] == board[7]:
+      if board[1] == "X":
+        print('get good')
+      else:
+        print('CHEATER')
+        return True
+        print('01100010 01110010 01110101 01101000 00100000 01101001 01101101 00100000 01110011 01101111 00100000 01101101 01110101 01100011 01101000 00100000 01100010 01100101 01110100 01110100 01100101 01110010 00100000 01110100 01101000 01100001 01101110 00100000 01111001 01101111 01110101')
+        return True
+
+  turns = 0
+
+  while True:
+      makeboard(board)
+      player = int(input(''))
+
+      while board[player] == "O" or board[player] == "X":
+        player = int(input("that's taken, where elce"))
+
+      board[player] = "X"
+      makeboard(board)
+      if (checkresult(board) == True):
+        break
+      if turns == 4:
+        print("Tie game")
+        break
+      cpuchoice = randint(1,9)
+
+      while board[cpuchoice] == "O" or board[cpuchoice] == "X":
+          cpuchoice = randint(1,9)
+
+      board[cpuchoice] = "O"
+      print("")
+      print("CPU picked " + str(cpuchoice))
+      makeboard(board)
+      if (checkresult(board) == True):
+        break
+      print("")
+      turns += 1
+
+
+for i in range(4):
+  sleep(0.5)
+  print('loading.')
+  sleep(0.5)
+  print('loading..')
+  sleep(0.5)
+  print('loading...')
+  sleep(0.8)
+  print('loading..')
+
+
+sleep(2)
+print('3%')
+sleep(6)
+print('31%')
+sleep(4)
+print('50%')
+sleep(1)
+print('100%')
+
+
+
+print('why hello my name is ciait verson 1.6')
+sleep(2.5)
+while True:
+  print('k you want to do rpsm ttt or m im not going to translate that to you')
+  answer = input("")
+  os.system("clear")
+
+  if answer == "ttt":
+    print("K you go first")
+    tictactoegame()
+
+  elif answer == 'rpsm':
+    print('alringht now playing rock paper sisr ???')
+    rpsm()
+
+
+  elif answer == 'm':
+    print(' ok mad libs it is')
+    m()
+
+  elif answer == 'lg':
+    print(' guess the number')
+    lg()
+    os.system("clear")
